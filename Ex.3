@@ -108,7 +108,30 @@ void grafpartial(int A[][100], int B[][100], int n1, int m1, int n2, int m2)
             cout<<"nu"<<endl;
     }
 }
+void grafcomplet(int A[10][10], int n, int m)
+{
+    cout<<endl;
+    int ok1=1,ok2;
+    for(int i=1; i<=n; i++)
+        if(A[i][i]==1)
+            {ok1=0;break;}
 
+
+    ok2=1;
+    for(int i=1; i<=n; i++)
+        for(int j=i+1; j<=n; j++)
+            if(A[i][j]==0)
+                {ok2=0;break;}
+
+    if(ok1==1&&ok2==1)
+        cout<<"!!Este graf complet";
+    else
+        cout<<"NU este graf complet";
+
+
+}
+
+/*
 void grafcomplet(int a[][100], int &n, int &m)
 {
     {
