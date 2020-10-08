@@ -190,9 +190,30 @@ int totEdge(int n)
     return result;
 }
 
+void pbf(int a[100][100], int n, int x)
+{
+    int c[50], viz[50], i, p, u, v;
+    for(i=1;i<=n;i++)
+    viz[i]=0;
+    viz[x]=1;c[1]=x;
+    p=1;u=1;
+    while(p<=u)
+    {
+        v=c[p++];
+        for(i=1;i<=n;i++)
+            if(a[v][i]==1 && viz[i]==0)
+            {
+                c[++u]=i;
+                viz[i]=1;
+            }
+    }
+    for(i=1;i<=u;i++)
+        cout<<c[i]<<" ";
+}
+
 int main()
 {
-    int a[100][100],b[100][100],c[100][100],n,m,n2,m2,n1,m1;
+    int a[100][100],b[100][100],c[100][100],n,m,n2,m2,n1,m1,x=1;
     citire(a,n,m);
     citire2(b,n2,m2);
     citire3(c,n1,m1);
@@ -201,12 +222,14 @@ int main()
     afisare2(b,n2,m2);
     cout<<endl;
     afisare3(c,n1,m1);
-
+    cout<<endl;
     subgraf(a,b,n,m,n2,m2);
     cout<<endl;
     grafpartial(a, b, n,m, n2, m2);
     grafcomplet(c,n1,m1);
-
+    cout<<endl;
+    /*cout<<"Cititi nodul-start: ";cin>>x;*/
+    pbf(a,n,x);
     /*
     totEdge
     int n = 6;
