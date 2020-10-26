@@ -1,0 +1,81 @@
+#include <iostream>
+
+using namespace std;
+
+int a[100][100], n, m;
+
+//citirea grafului in functie de arce
+void citire()
+{
+    int i, j;
+    cout<<"Numarul de noduri: ";
+    cin>>n;
+    cout<<"Numarul de arce: ";
+    cin>>m;
+    for(i=1; i<=n; i++)
+        for(j=1; j<=n; j++)
+        {
+            a[i][j]=0;
+        }
+    for(int k=1; k<=m; k++)
+    {
+        cout<<"Arcul "<<k<<" este: ";
+        cin>>i>>j;
+        a[i][j]=1;
+    }
+}
+
+void afisare()
+{
+    for(int i=1; i<=n; i++)
+    {
+        for(int j=1; j<=n; j++)
+            cout<<a[i][j]<<" ";
+        cout<<endl;
+    }
+}
+
+//multimea arcelor ce ies din "x"
+void arce_out(int x)
+{
+    for(int j=1; j<=n; j++)
+        if(a[x][j]==1)
+        {
+            cout<<"("<<x<<","<<j<<")"<<" ";
+        }
+}
+
+//multimea arcelor ce intra in "x"
+void arce_in(int x)
+{
+    for(int i=1; i<=n; i++)
+        if(a[i][x]==1)
+        {
+            cout<<"("<<i<<","<<x<<")"<<" ";
+        }
+}
+
+
+
+int main()
+{
+    int x;
+    citire();
+    cout<<endl;
+    cout<<"Matricea de adiacenta este: ";
+    cout<<endl;
+    afisare();
+    cout<<endl;
+    cout<<"Nodul pentru care vreti sa vedeti multimea arcelor este: ";
+    cin>>x;
+    cout<<endl;
+    cout<<"Multimea arcelor ce ies din "<<x<<" este: ";
+    arce_out(x);
+    cout<<endl;
+    cout<<"Multimea arcelor ce intra in "<<x<<" este: ";
+    arce_in(x);
+    cout<<endl;
+
+
+    return 0;
+}
