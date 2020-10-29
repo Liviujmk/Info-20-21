@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int n, m, i, j, a[20][20], x, y,b=1,viz[20];
+int n, m, i, j, a[200][200], x, y,b=1,viz[200];
 
 void cg()
 {
@@ -67,13 +67,15 @@ void BF(int start)
 
 void DF(int k)
 {
+    int i;
     viz[k]=1;
     cout<<k<<" ";
-    for(int i=1;i<=n;i++)
-        if(a[k][i]==1)
-            if(viz[i]==0)
+    for(i=1;i<=n;i++)
+        if(a[k][i]==1 && viz[i]==0)
     DF(i);
 }
+
+
 
 void DFBF()
 {
@@ -81,6 +83,12 @@ void DFBF()
     {
         cout<<"BF("<<i<<")= ";
         BF(i);
+        cout<<endl;
+    }
+    for(int j=1;j<=n;j++)
+    {
+        cout<<"DF("<<j<<")= ";
+        DF(j);
         cout<<endl;
     }
 }
