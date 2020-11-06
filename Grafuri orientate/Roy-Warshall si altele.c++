@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <fstream>
 using namespace std;
 
 int a[100][100], n, m, k,i,j,s[100],l,poz;
@@ -93,6 +93,20 @@ void afisare_vector()
         cout<<s[i]<<" ";
 }
 
+void transformaregraf()
+{
+    for(i=1;i<=n;i++)
+        for(j=1;j<=n;j++)
+            if(a[j][i]+a[i][j]==2)
+                a[j][i]=0;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+            cout<<a[i][j]<<" ";
+        cout<<endl;
+    }
+}
+
 int main()
 {
     citire();
@@ -105,16 +119,10 @@ int main()
     cout<<endl;
     cout<<endl;
     afisare_vector();
+    cout<<endl;
+    transformaregraf();
+    cout<<endl;
+
     return 0;
 }
-/*
-
-4
-1 4
-2 1
-2 4
-1 3
-2 3
-4 3
-
-*/     
+se da un g o si 2 vf distincte k si l, det daca vk k si l se afla in aceeasi componenta conexa
