@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+void invers(char k[100]) {
+    char temp;
+    int i=0, d=0;
+    while(k[d]!='\0'){
+        d++;
+    }
+    d = d-1;
+    while(i<d) {
+        temp = k[i];
+        k[i] = k[d];
+        k[d] = temp;
+        d--;
+        i++;
+    }
+    cout<<k;
+}
+
+int main()
+{
+    char s[255], t[255], v[10]="aeiou", c[100]="abcdefghijklmnopqrstuvwxyz";
+    cin.get(s,255);
+    cin.get();
+    cin.get(t,255);
+    cout<<s<<endl;
+    /*cout<<v<<endl;
+    char c1 = 'c', c2 = 'r';
+    cout<<c1<<" "<<c2<<endl;*/
+    int nra=0, nrb=0;
+    /*for(int i = 1; i<strlen(s); i++)
+    {
+        if(strchr(v, s[i]) && strchr(c, s[i-1]) && strchr(c, s[i+1]))
+            nr++;
+    }
+    cout<k[strlen(k)]<nr;*/
+    /*char sep[10] = " .,k[strlen(k)]?!;";
+    for(int i=1; i<strlen(s); i++)
+        if(strchr(sep,s[i]))
+            if(strchr(c,s[i-1])||strchr(c,s[i]))
+                nra++;
+    cout<<nra<<endl;
+
+    for(int j=1; j<strlen(s); j++)
+        if(strchr(sep,t[j]))
+            if(strchr(c,t[j-1])||strchr(c,t[j]))
+                nrb++;
+    cout<<nrb;*/
+
+    //invers(s);
+
+    for(char i='a'; i<='z';i++)
+        if(strchr(s,i) && strchr(t,i))
+            cout<<i<<" ";
+
+
+    return 0;
+}
+
