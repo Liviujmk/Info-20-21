@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <cstring>
 
 using namespace std;
@@ -26,11 +26,42 @@ int main()
     cin.get(s,255);
     cin.get();
     cin.get(t,255);
-    cout<<s<<endl;
+    char p* = strtok(s, " ");
+
+    while(p) {
+        if(strchr(v, *p))
+    }
+
+
+    /*int x=strlen(s)-1;
+    int y=strlen(t)-1;
+    while(s[x]==t[y])
+    {
+        x--;
+        y--;
+    }
+    cout<<s+x+1;*/
+
     /*cout<<v<<endl;
     char c1 = 'c', c2 = 'r';
     cout<<c1<<" "<<c2<<endl;*/
-    int nra=0, nrb=0;
+
+    /*char vocale[10]="aeiou";
+    int i;
+    for(i=0; i<strlen(vocale); i++)
+    {
+        strcpy(t,s);
+        int j=0;
+        while(j<strlen(t))
+            if(t[j]==vocale[i])
+                strcpy(t+j,t+j+1);
+            else
+                j++;
+                if(strlen(s)!=strlen(t))
+    cout<<vocale[i]<<": "<<t<<endl;
+    }
+    */
+    //int nra=0, nrb=0;
     /*for(int i = 1; i<strlen(s); i++)
     {
         if(strchr(v, s[i]) && strchr(c, s[i-1]) && strchr(c, s[i+1]))
@@ -52,11 +83,64 @@ int main()
 
     //invers(s);
 
-    for(char i='a'; i<='z';i++)
+    /*for(char i='a'; i<='z';i++)
         if(strchr(s,i) && strchr(t,i))
-            cout<<i<<" ";
+            cout<<i<<" ";*/
 
+    /*for(char i='a'; i<='z';i++)
+        if(strchr(s+strlen(s)-1,i) && strchr(t+strlen(t)-1,i))
+            cout<<i<<" ";*/
 
+    /*for(char j='a'; j<='z';j++)
+        if(strchr(s+strlen(s)-2, j) && strchr(t+strlen(t)-2,j))
+            cout<<st;*/
+
+/*    return 0;
+}*/
+
+//ex 12     (abbc)
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[100];
+    int n;
+    cin.get(s, 100);
+    cout<<s[1]<<endl;;
+    n=strlen(s);
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(i!=j)
+                cout<<s[j];
+        }
+        cout<<endl;
+    }
     return 0;
 }
 
+
+
+//problema 13.
+/*
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int i;
+char s[100];
+int main()
+{
+    cin.getline(s,100);
+    for(i=0; i<strlen(s); i++)
+        if(strchr("aeiou",s[i])!=0)
+            s[i]++;
+    cout<<s;
+    return 0;
+}*/
