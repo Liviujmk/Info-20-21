@@ -1,0 +1,80 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+
+int main()
+{
+    char sep[]=" ", s[255], s2[100];
+    int n;
+    cin.getline(s, 255);
+    cin>>n;
+
+
+    /*char * p = strtok(s, sep);
+    while(p != NULL)
+    {
+        if(strlen(p)>=3){
+            aux = p[0];
+            for(int i=0; i<=strlen(p); i++)
+            {
+                p[i] = p[i+1];
+            }
+            p[strlen(p)] = aux;
+        }
+            cout<<p<<" " ;
+        p = strtok(NULL, sep);
+    }*/
+
+    /*char m[strlen(s)+1];
+    m[0] = '\0';
+    char * p = strtok(s, sep);
+    while(p != NULL)
+    {
+        if(strlen(p)%2!=0)
+        {
+            strrev(p);
+        }
+        strcat(m, p);
+        strcat(m, " ");
+        p=strtok(NULL, " ");
+    }
+
+    strcpy(s, m);*/
+
+    /*for(int i=0; i<=strlen(s); i++) {
+        if(s[i]=='<')
+            while(s[i]!='>')
+            {
+                if(isalpha(s[i]))
+                    strupr(s);
+                i++;
+            }
+
+    }
+    cout<<s;*/
+
+
+
+
+    strcat(s2, s);
+
+    char * p =  strtok(s, sep);
+    while(p != NULL)
+    {
+        if(strlen(p)>=n)
+            cout<<p<<endl;
+        p = strtok(NULL, sep);
+    }
+
+    char *k =  strtok(s2, sep);
+    while(k != NULL)
+    {
+        if(strlen(k)<n)
+            cout<<k<<endl;
+        k = strtok(NULL, sep);
+    }
+
+    return 0;
+}
