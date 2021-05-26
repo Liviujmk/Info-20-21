@@ -21,3 +21,26 @@ a. ’m’<’n’
 c. ’M’==’m’+’N’-’n’ 
 d. ’N’=='M’+1
 
+
+
+
+III.2
+
+
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+
+int main()
+{
+    char sep[]=" ", a[255], b[100];
+    cin.getline(a, 20);
+    cin.getline(b, 20);
+    cout<<endl;
+    cout<<a<<endl<<b<<endl;
+
+    return 0;
+}
