@@ -36,11 +36,18 @@ using namespace std;
 
 int main()
 {
-    char sep[]=" ", a[255], b[100];
-    cin.getline(a, 20);
+    char sep[]=" ", a[255], b[20], f[]="nedeterminat";
     cin.getline(b, 20);
     cout<<endl;
-    cout<<a<<endl<<b<<endl;
-
+    cout<<b<<endl;
+    int l = strlen(b)-3;
+    //if(strlen(b) < 3)
+    if(strlen(b) < 3)
+        strcpy(a, "nedeterminat");
+    else
+        strcpy(a, b+l);
+    cout<<a;
     return 0;
 }
+
+
