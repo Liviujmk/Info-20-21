@@ -1,0 +1,23 @@
+BAC 2019 IULIE
+
+
+
+I.3. Variabila x este de tip char şi memorează o literă mică a alfabetului englez. Indicați expresia
+C/C++ care are valoare nenulă dacă şi numai dacă litera memorată în variabila x este o vocală. Se
+consideră vocale literele a, e, i, o, u.
+-->a. strcmp(x,"aeiou")==0
+b. strchr("aeiou",x)
+c. ’a’<=x && x<=’u’
+d. x==a || x==e || x==i || x==o || x==u
+
+BAC 2019 August
+
+
+I.1
+
+O expresie C/C++ care are valoarea 0 este:
+a. ’m’<’n’ 
+-->b. ’m’==’M’
+c. ’M’==’m’+’N’-’n’ 
+d. ’N’=='M’+1
+
