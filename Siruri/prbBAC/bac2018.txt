@@ -1,0 +1,42 @@
+iunie   
+
+
+
+
+// Example program
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+  char s[102],c[102],aux[204];
+  cin>>s>>c;
+    int i,lungime=0;
+    char cuv[102];
+    for(i=strlen(s); i>0; i--)
+    {
+        int cif=c[i];
+        if(cif%2!=0)
+        {
+            cuv[lungime]=s[i];
+            lungime++;
+        }  
+    }
+    cuv[lungime]=s[0];
+            lungime++;
+    for(i=1; i<strlen(s); i++)
+    {
+        int cif=c[i];
+        if(cif%2==0)
+        {
+            cuv[lungime]=s[i];
+            lungime++;
+        }
+    }
+    for(i=0; i<lungime; i++)
+        aux[i]=cuv[lungime-i-1];
+    cout<<aux;
+
+}
